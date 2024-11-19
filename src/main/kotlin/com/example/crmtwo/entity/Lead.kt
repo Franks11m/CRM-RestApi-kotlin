@@ -9,10 +9,10 @@ data class Lead(
     val leadId: Long = 0,
     val name: String,
     val email: String,
-    val status: String = "active", // Campo agregado
+    val status: String = "active",
     val createdAt: LocalDateTime = LocalDateTime.now(),
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
-    val customer: Customer? = null // Relación con Customer
+    val customer: Customer? = null
 )

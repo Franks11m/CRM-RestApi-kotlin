@@ -9,6 +9,6 @@ data class Activity(
     val activityId: Long = 0,
     val leadId: Long,
     val description: String,
-    val activityType: String? = null, // Campo agregado
+    val activityType: String? = null,
     val activityDate: LocalDateTime = LocalDateTime.now()
 )

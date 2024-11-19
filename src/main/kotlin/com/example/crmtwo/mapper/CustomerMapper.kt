@@ -5,10 +5,10 @@ import com.example.crmtwo.entity.Customer
 
 object CustomerMapper {
 
-    // Convierte una entidad Customer a un DTO CustomerDto
+
     fun toDto(customer: Customer): CustomerDto {
         return CustomerDto(
-            id = customer.id, // El id no debe ser null en la entidad
+            id = customer.id,
             fullName = customer.fullName,
             email = customer.email,
             phone = customer.phone,
