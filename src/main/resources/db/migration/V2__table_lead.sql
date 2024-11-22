@@ -6,4 +6,5 @@ CREATE TABLE IF NOT EXISTS lead (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     customer_id BIGINT,
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE SET NULL
+    FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE SET NULL
     );

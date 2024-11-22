@@ -1,7 +1,7 @@
 package com.example.crmtwo.mapper
 
 import com.example.crmtwo.dto.LeadActivityViewDto
-import com.example.crmtwo.entity.LeadActivityView // La entidad correspondiente a la vista
+import com.example.crmtwo.entity.LeadActivityView
 
 object LeadActivityViewMapper {
 

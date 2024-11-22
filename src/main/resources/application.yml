@@ -8,8 +8,7 @@ spring:
   flyway:
     enabled: true
     baselineVersion: 1
-    locations:
-      classpath: db/migration
+    locations:  classpath:db/migration
     sqlMigrationSuffixes: .sql
     baselineOnMigrate: true
     sqlMigrationPrefix: V

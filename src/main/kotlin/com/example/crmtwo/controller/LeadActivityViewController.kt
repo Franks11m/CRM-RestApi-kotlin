@@ -2,9 +2,8 @@ package com.example.crmtwo.controller
 
 import com.example.crmtwo.dto.LeadActivityViewDto
 import com.example.crmtwo.service.LeadActivityViewService
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("/lead-activities")
@@ -13,5 +12,10 @@ class LeadActivityViewController(private val leadActivityViewService: LeadActivi
     @GetMapping
     fun getAllLeadActivities(): List<LeadActivityViewDto> {
         return leadActivityViewService.getAllLeadActivities()
+    }
+
+    @GetMapping("/{id}")
+    fun getLeadActivityById(@PathVariable id: Long): LeadActivityViewDto {
+        return leadActivityViewService.getLeadActivityById(id)
     }
 }

@@ -1,13 +1,17 @@
 package com.example.crmtwo.repository
 
-import com.example.crmtwo.dto.LeadActivityViewDto
+import com.example.crmtwo.entity.LeadActivityView
 import org.springframework.data.jpa.repository.Query
-import org.springframework.data.repository.CrudRepository
+import org.springframework.data.repository.query.Param
 import org.springframework.stereotype.Repository
+import org.springframework.data.jpa.repository.JpaRepository
 
 @Repository
-interface LeadActivityViewRepository : CrudRepository<LeadActivityViewDto, Long> {
+interface LeadActivityViewRepository : JpaRepository<LeadActivityView, Long> {
 
-    @Query(nativeQuery = true, value = "SELECT * FROM lead_activity_view")
-    fun findAllLeadActivities(): List<LeadActivityViewDto>
+    @Query("SELECT lav FROM LeadActivityView lav")
+    fun findAllLeadActivities(): List<LeadActivityView>
+
+    @Query("SELECT lav FROM LeadActivityView lav WHERE lav.activityId = :id")
+    fun findLeadActivityById(@Param("id") id: Long): LeadActivityView?
 }

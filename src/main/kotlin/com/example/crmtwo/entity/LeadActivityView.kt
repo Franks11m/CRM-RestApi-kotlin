@@ -1,39 +1,21 @@
 package com.example.crmtwo.entity
 
-import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.Id
 import jakarta.persistence.Table
 import java.time.LocalDateTime
 
 @Entity
-@Table(name = "lead_activity_view")
+@Table(name = "lead_activity_view") // Nombre de la vista en la base de datos
 data class LeadActivityView(
     @Id
-    @Column(name = "activityid") // Coincide con el nombre real de la columna
-    val activityId: Long,
-
-    @Column(name = "leadid")
-    val leadId: Long?,
-
-    @Column(name = "leadname")
-    val leadName: String?,
-
-    @Column(name = "leademail")
-    val leadEmail: String?,
-
-    @Column(name = "activitydescription")
-    val activityDescription: String?,
-
-    @Column(name = "activitydate")
-    val activityDate: LocalDateTime?,
-
-    @Column(name = "customerid")
-    val customerId: Long?,
-
-    @Column(name = "customername")
-    val customerName: String?,
-
-    @Column(name = "customeremail")
-    val customerEmail: String?
+    val activityId: Long, // activity_id
+    val activityDate: LocalDateTime?, // activity_date
+    val activityDescription: String?, // activity_description
+    val customerId: Long?, // customer_id
+    val customerName: String?, // customer_name
+    val customerEmail: String?, // customer_email
+    val leadId: Long?, // lead_id
+    val leadName: String?, // lead_name
+    val leadEmail: String? // lead_email
 )
